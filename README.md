@@ -1,145 +1,97 @@
-# Indonesia Luxe
+# 💎 Indonesia Luxe — Premium Tour & Travel Platform
 
-Aplikasi web booking paket wisata berbasis Laravel 11 dan Livewire 3. Dibangun untuk kebutuhan internal dengan alur pemesanan end-to-end: dari pencarian paket, checkout, upload bukti bayar, sampai verifikasi oleh admin.
+[![Laravel](https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel)](https://laravel.com)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
+[![Alpine.js](https://img.shields.io/badge/Alpine.js-3.x-8BC0D0?style=for-the-badge&logo=alpine.js)](https://alpinejs.dev)
+[![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php)](https://php.net)
 
----
-
-## Requirements
-
-- PHP >= 8.2
-- Composer
-- Node.js >= 18
-- MySQL
+Indonesia Luxe adalah platform e-commerce tour & travel premium yang dirancang untuk memberikan pengalaman eksplorasi Nusantara yang elegan dan tak terlupakan. Aplikasi ini berfokus pada estetika **Glassmorphism**, antarmuka pengguna yang hidup dengan micro-animations, serta alur bisnis yang lengkap untuk Wisatawan, Vendor, dan Admin.
 
 ---
 
-## Installation
+## ✨ Key Highlights
+
+-   **Premium Aesthetics**: Menggunakan palet warna **Amber-500** yang mewah dikombinasikan dengan efek **Glassmorphism** di seluruh antarmuka.
+-   **Immersive Experience**: Hero section dengan slideshow interaktif dan animasi AOS (Animate On Scroll) yang halus.
+-   **Responsive Design**: Dioptimalkan secara penuh untuk perangkat mobile (Mobile-First) dan desktop.
+-   **Role-Based Access Control**: Sistem yang aman untuk akun Guest, User, Vendor, dan Admin.
+
+---
+
+## 🛠️ Core Technology Stack
+
+| Architecture | Technologies |
+| :--- | :--- |
+| **Backend Framework** | [Laravel 11](https://laravel.com) |
+| **Frontend Rendering** | [Blade Templating Engine](https://laravel.com/docs/blade) |
+| **Styling & Design** | [Tailwind CSS](https://tailwindcss.com) (Standard & Custom Glassmorphism UI) |
+| **Interactivity** | [Alpine.js](https://alpinejs.dev) for lightweight state management |
+| **Icons & Media** | [Lucide Icons](https://lucide.dev) & [Unsplash API](https://unsplash.com) (Premium Assets) |
+| **Animations** | [AOS.js](https://michalsnik.github.io/aos/) (Animate on Scroll) |
+| **Database** | [MySQL](https://www.mysql.com/) |
+
+---
+
+## 🚀 Fitur Berdasarkan Role
+
+### 👤 Guest (Public)
+-   **Discovery**: Jelajahi kategori wisata (Open Trip, Private, Hiking, Snorkeling, etc.).
+-   **Smart Search**: Cari destinasi favorit melalui pencarian real-time.
+-   **Premium Detail**: Lihat itinerary mendalam, apa yang termasuk dalam paket, dan galeri premium.
+-   **Seamless Auth**: Halaman Login & Register dengan desain modern dua-panel.
+
+### 🎒 User (Wisatawan)
+-   **Smart Cart**: Kelola beberapa pesanan sebelum checkout.
+-   **Booking Management**: Pantau status pesanan (Pending, Verified, Completed).
+-   **Wishlist**: Simpan paket impian untuk dipesan nanti.
+-   **Loyalty Points**: Dapatkan Luxe Points untuk setiap transaksi sukses.
+
+### 🏢 Vendor (Penyedia Jasa)
+-   **Analytics Dashboard**: Pantau total pesanan, paket aktif, dan saldo wallet secara visual.
+-   **Package Manager**: Tambah dan kelola paket tour dengan kontrol penuh.
+-   **Wallet System**: Kelola pendapatan dan ajukan penarikan dana (Withdrawal).
+
+### 🛡️ Admin (Control Center)
+-   **Central Oversight**: Monitoring seluruh statistik transaksi platform.
+-   **Verification Engine**: Validasi pembayaran manual (bukti transfer) dan aktivasi vendor.
+-   **Inventory Control**: Kelola kategori dan moderasi paket paket tour.
+
+---
+
+## ⚙️ Quick Installation
+
+Pastikan Anda memiliki **PHP 8.2+** dan **Composer** terinstal di sistem Anda.
 
 ```bash
-# Install dependencies
+# 1. Clone repositori
+git clone https://github.com/gariiriana/Indonesia-Luxe.git
+cd Indonesia-Luxe
+
+# 2. Install dependencies
 composer install
 npm install && npm run build
 
-# Setup environment
+# 3. Setup Environment
 cp .env.example .env
 php artisan key:generate
 
-# Konfigurasi database di .env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=indonesia_luxe
-DB_USERNAME=root
-DB_PASSWORD=
-
-# Jalankan migasi dan seeder
+# 4. Database Setup (Konfigurasi .env sesuai DB lokal Anda)
 php artisan migrate --seed
 php artisan storage:link
 
-# Jalankan server development
+# 5. Launch
 php artisan serve
 ```
 
-Aplikasi berjalan di `http://localhost:8000`.
+---
+
+## 🎨 Design System
+
+Proyek ini telah melalui tahap optimasi visual untuk menyamai standar **Figma High-Fidelity Prototype**:
+-   **Typography**: `Inter` untuk kejelasan data, `Playfair Display` untuk nuansa mewah di judul.
+-   **Spacing**: Mengikuti metrik 4-grid untuk harmoni visual.
+-   **Glassmorphism**: Implementasi `backdrop-blur` dan `border-white/20` pada komponen navigasi dan kartu.
 
 ---
 
-## Default Credentials
-
-| Role   | Email                      | Password |
-|--------|----------------------------|----------|
-| Admin  | admin@indonesialuxe.com    | password |
-| Vendor | vendor@indonesialuxe.com   | password |
-| User   | user@indonesialuxe.com     | password |
-
----
-
-## Fitur Utama
-
-**Sisi User**
-- Homepage dengan hero video background
-- Pencarian dan filter paket secara real-time (Livewire)
-- Halaman detail paket dengan galeri foto dan itinerary
-- Keranjang belanja — bisa pilih beberapa paket sekaligus
-- Checkout dengan upload bukti transfer manual
-- Halaman tracking status booking
-
-**Dashboard Vendor**
-- Manajemen paket wisata (tambah, edit, hapus)
-- Monitoring booking yang masuk
-- Laporan transaksi per periode
-
-**Dashboard Admin**
-- Persetujuan akun vendor baru
-- Validasi pembayaran user
-- Monitoring seluruh transaksi
-- Laporan bulanan
-
----
-
-## Struktur Direktori
-
-```
-app/
-├── Http/
-│   ├── Controllers/        # PackageController, BookingController, PageController
-│   └── Middleware/         # AdminMiddleware, VendorMiddleware
-├── Livewire/
-│   ├── Admin/              # AdminDashboard, PaymentValidation
-│   ├── Vendor/             # VendorDashboard, PackageManager
-│   └── SearchPackages.php, CartComponent.php, CheckoutComponent.php
-└── Models/                 # User, Package, Booking, Payment, Review, Vendor
-
-resources/views/
-├── layouts/                # app.blade.php — layout utama dengan navbar dan footer
-├── sections/               # hero, categories, featured-packages, testimonials
-├── pages/                  # home, search, package-detail, checkout, booking-status
-└── livewire/               # blade views untuk setiap Livewire component
-
-database/
-├── migrations/             # 8 tabel: users, vendors, packages, bookings, payments, dst.
-└── seeders/                # DatabaseSeeder — data dummy siap pakai
-
-routes/
-└── web.php                 # Semua route, termasuk grup auth dan role middleware
-```
-
----
-
-## Tech Stack
-
-| Komponen   | Teknologi                      |
-|------------|-------------------------------|
-| Backend    | Laravel 11, PHP 8.2           |
-| Reaktivitas| Livewire 3, Alpine.js         |
-| Styling    | Tailwind CSS (via CDN)        |
-| Database   | MySQL                         |
-| Auth       | Laravel Fortify               |
-| Dev Tools  | Laravel Pint, Ignition, Sail  |
-
----
-
-## Perintah yang Sering Dipakai
-
-```bash
-# Bersihkan cache
-php artisan optimize:clear
-
-# Reset database + jalankan ulang seeder
-php artisan migrate:fresh --seed
-
-# Buat Livewire component baru
-php artisan make:livewire NamaComponent
-
-# Buat model + migration sekaligus
-php artisan make:model NamaModel -m
-```
-
----
-
-## Catatan
-
-- Gambar dan video disimpan di `storage/app/public`, diakses lewat symlink `public/storage`.
-- Payment gateway belum diintegrasikan — sistem masih pakai upload bukti manual. Rencana ke depan pakai Midtrans atau Xendit.
-- Untuk deployment production: set `APP_ENV=production`, lalu jalankan `php artisan config:cache` dan `php artisan route:cache`.
-- Lihat `DEVELOPER_GUIDE.md` untuk panduan lengkap termasuk troubleshooting umum.
+<p align="center">Made with ❤️ for Indonesia Tourism</p>
