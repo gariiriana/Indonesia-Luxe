@@ -1,4 +1,4 @@
-##nIndonesia Luxe — Premium Tour & Travel Platform
+## Indonesia Luxe — Premium Tour & Travel Platform
 
 [![Laravel](https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel)](https://laravel.com)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
